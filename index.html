@@ -1,10 +1,213 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">
-		<title></title>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>移动端网页</title>
 	</head>
-	<body>
-    <p>fcjhsdebchjebhjcbvehjcbh</p>
+	<style>
+		*{ margin: 0; padding: 0; list-style: none;}
+		html{ font-size: 50px;}
+		.header{ width:100%; margin: 0 auto; height:0.54rem; background:#ff5a28;}
+		.navImg{ width: 100%; height: 1.2rem;}
+		.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0}
+		.clearfix{zoom:1}
+		.left{ float: left;} 
+		.right{ float: right;}
+		.menuIcon{ width: 0.34rem; height: 0.24rem; background: url(img/menuIcon.png) center center no-repeat; background-size: cover; margin-left: 0.2rem; margin-top: 0.15rem;}
+		.searchWrap{ height: 0.34rem; background: #fff; border-radius: 5px; width: 1.75rem; margin-right: 0.4rem; margin-top: 0.1rem;}
+		.searchInp{ width:1.38rem; height: 0.34rem; line-height: 0.34rem; border: none; focus:none; font-size: 0.14rem; text-indent:0.12rem;}
+		.searchBtn{ background: url(img/searchIcon.png) left center no-repeat; background-size: cover; width: 0.22rem; height: 0.22rem; margin-top: 0.05rem;}
+		.navIcon1{ background: url(img/navIcon1.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navIcon2{ background: url(img/navIcon2.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navIcon3{ background: url(img/navIcon3.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navIcon4{ background: url(img/navIcon4.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navIcon5{ background: url(img/navIcon5.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navIcon6{ background: url(img/navIcon6.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navIcon7{ background: url(img/navIcon7.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navIcon8{ background: url(img/navIcon8.png) left center no-repeat; background-size: cover ; width: 0.75rem; height: 0.75rem;margin: 0 auto;}
+		.navMenu{ margin-top: 0.2rem;}
+		.navMenu span{ display: block;} 
+		.navText{ font-size:0.2rem; color: #666; text-decoration: none; margin-top: 0.2rem;}
+		.navMenu a{ width: 25%; text-align: center;}
+		.marginT4{ margin-top: 0.4rem;}
+		.flowerPic{ background: url(img/flowerPic.png) repeat-x top; height: 0.48rem; margin-top: 0.28rem;}
+		.menuImg{ width: 1.25rem; height: 1.25rem; margin-left: 0.2rem;}
+		.menuSection{ width: 49%; border: 1px solid #ccc; padding: 0.1rem 0;}
+		.menuSection{ font-size: 0.18rem;}
+		.textTitle,.textText{ display: block; padding-left: 0.1rem;}
+		.textTitle{ font-size: 0.2rem; font-weight: bold; margin-top: 0.2rem;}
+		.textText{ color: #FF5A28;}
+		.swiper-container{ height: 2rem;}
+		.swiper-container img{ width: 100%; height: 100%;}
+		.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{ bottom: 0px;}
+	</style>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+	<link rel="stylesheet" href="css/swiper.min.css" />
+	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+	<script src="js/swiper-3.4.0.min.js"></script>
+	<script>
+		(function(global){
+			    function remChange(){
+			        document.documentElement.style.fontSize=50*document.documentElement.clientWidth/310+'px';
+			    }
+		    remChange();
+		    global.addEventListener('resize',remChange,false);
+		
+		})(window);
+		
+		$(document).on("pagecreate","#pageone",function(){
+			//点击
+			$(".navMenu a").on("tap",function(){
+			 	$(this).animate({left:-20},1000);
+			});
+			//长按弹出
+			$(".navMenu a").on("taphold",function(){
+			 	alert(1)
+			});
+			//滑动
+			$(".navImg").on("swipe",function(){
+			 	$(this).animate({"left":"-20px"},1000);
+			});
+			
+			//swiper
+			var mySwiper = new Swiper('.swiper-container',{
+				pagination : '.swiper-pagination',
+				autoplay: 2000,
+				//pagination : '#swiper-pagination1',
+			});
+		})
+
+	</script>
+	<body id="pageone">
+		<div class="header clearfix">
+			<a href="#" class="menuIcon left" onclick="alert('菜单')"></a>
+			<div class="right searchWrap">
+				<!--<input type="text" class="searchInp left" />-->
+				<!--<a href="#" class="searchBtn left"></a>-->
+			</div>
+		</div>
+		<div class="swiper-container">
+			<div class="swiper-wrapper">		
+				<div class="swiper-slide">
+					<img src="img/1.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/2.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/3.jpg" />
+				</div>
+				<div class="swiper-slide">
+					<img src="img/4.jpg" />
+				</div>
+				<div class="swiper-slide" style="display: none;">
+					<img src="img/41.jpg" />
+				</div>
+			</div>
+			<div class="swiper-pagination"></div>
+		</div>
+		<!--菜单选择 start-->
+		<div class="clearfix navMenu">
+			<a href="#" class="left">
+				<span class="navIcon1"></span>
+				<span class="navText">职位搜索 </span>
+			</a>
+			<a href="#" class="left">
+				<span class="navIcon2"></span>
+				<span class="navText">附近的工作   </span>
+			</a>
+			<a href="#" class="left">
+				<span class="navIcon3"></span>
+				<span class="navText">职位申请  </span>
+			</a>
+			<a href="#" class="left">
+				<span class="navIcon4"></span>
+				<span class="navText">企业邀约 </span>
+			</a>
+			
+			<a href="#" class="left">
+				<span class="navIcon5 marginT4"></span>
+				<span class="navText">我的简历 </span>
+			</a>
+			<a href="#" class="left marginT4">
+				<span class="navIcon6"></span>
+				<span class="navText">招聘会 </span>
+			</a>
+			<a href="#" class="left marginT4">
+				<span class="navIcon7"></span>
+				<span class="navText">查工资 </span>
+			</a>
+			<a href="#" class="left marginT4">
+				<span class="navIcon8"></span>
+				<span class="navText">更多 </span>
+			</a>
+			
+		</div>
+		<!--菜单选择 end-->
+		<div class="flowerPic"></div>
+		<div class="clearfix">
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">玩3c</span>
+					<span class="textText">vivo x9预购</span>
+					<span class="textText">精彩3c</span>
+				</span>
+				<img class="menuImg" src="img/JYD875I8MW4H7Y1GU928182GRM3K1BR6.jpg"/>
+			</a>
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">京东家电</span>
+					<span class="textText">vivo x9预购</span>  
+				</span>
+				<img class="menuImg" src="img/S3M7B25PNMJ118HQK95V0O9J0G8O9YF0.jpg" />
+			</a>
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">s7</span>
+					<span class="textText">vivo x9预购</span>
+					<span class="textText">精彩3c</span>
+				</span>
+				<img class="menuImg" src="img/280718P138628CQY02606649HYGRM03U.jpg"/>
+			</a>
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">荣耀</span>
+					<span class="textText">vivo p9预购</span>
+				</span>
+				<img class="menuImg" src="img/4Y9WB4F87XV0B77SG6Z93U87J46V3SXR.jpg"/>
+			</a>
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">玩3c</span>
+					<span class="textText">vivo x9预购</span>
+					<span class="textText">精彩3c</span>
+				</span>
+				<img class="menuImg" src="img/JYD875I8MW4H7Y1GU928182GRM3K1BR6.jpg"/>
+			</a>
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">京东家电</span>
+					<span class="textText">vivo x9预购</span>  
+				</span>
+				<img class="menuImg" src="img/S3M7B25PNMJ118HQK95V0O9J0G8O9YF0.jpg" />
+			</a>
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">s7</span>
+					<span class="textText">vivo x9预购</span>
+					<span class="textText">精彩3c</span>
+				</span>
+				<img class="menuImg" src="img/280718P138628CQY02606649HYGRM03U.jpg"/>
+			</a>
+			<a href="#" class="left menuSection">
+				<span class="left menuText">
+					<span class="textTitle">荣耀</span>
+					<span class="textText">vivo p9预购</span>
+				</span>
+				<img class="menuImg" src="img/4Y9WB4F87XV0B77SG6Z93U87J46V3SXR.jpg"/>
+			</a>
+		</div>
 	</body>
 </html>
